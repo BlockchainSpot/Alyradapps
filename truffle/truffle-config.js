@@ -4,9 +4,8 @@ const HDWalletProvider = require('@truffle/hdwallet-provider');
 require('dotenv').config();
 
 module.exports = {
-  // See <http://truffleframework.com/docs/advanced/configuration>
-  // to customize your Truffle configuration!
-  contracts_build_directory: path.join(__dirname, "client/src/contracts"),
+
+  contracts_build_directory: path.join( "../client/src/contracts"),
   networks: {
     development: {
      host: "127.0.0.1",     // Localhost (default: none)
@@ -37,7 +36,7 @@ module.exports = {
   // Configure your compilers
   compilers: {
     solc: {
-      version: "0.8.13",    // Fetch exact version from solc-bin (default: truffle's version)
+      version: "0.8.15",    // Fetch exact version from solc-bin (default: truffle's version)
     }
   },
 };
