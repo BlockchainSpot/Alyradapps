@@ -194,7 +194,7 @@ contract Voting is Ownable {
 
     }
 
-    /// @dev reset workflow
+    /// @dev reset workflow @karl
     /// @notice reset workflow
     function resetWorkflow() external onlyOwner {
         require(numberOfProposals == 0,' they are already an proposal');
