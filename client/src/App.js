@@ -203,7 +203,7 @@ class App extends Component {
         return (
           <div className="App">
     
-            <h1>Application de vote</h1>
+            <h1> Section de Vote</h1>
             <div>Adresse connectée : {this.state.accounts}</div><br></br>
             <div>Etat du vote (workflowStatus) : {this.state.workflowStatus}</div>
             <p>Owner, inscrivez les voters ici : </p>
@@ -256,7 +256,7 @@ class App extends Component {
         return (
           <div className="App">
     
-            <h1>Application de vote</h1>
+            <h1> Section de vote </h1>
             <div>Adresse connectée : {this.state.accounts}</div><br></br>
             <div>Etat du vote (workflowStatus) : {this.state.workflowStatus}</div>
             <p>Owner, inscrivez les voters ici : </p>
