@@ -44,11 +44,8 @@ class App extends Component {
 
 
   runExample = async () => {
-    const { accounts, contract } = this.state;
+    const { contract } = this.state;
     
-    // const response = await contract.methods.getWinningProposalId().call();
-    // this.setState({ winningProposal: response });
-
     const response2 = await contract.methods.getWorkflowStatus().call();
     this.setState({ workflowStatus: response2 });
   }; 
@@ -139,6 +136,10 @@ class App extends Component {
 
     let valueEventNewStatus = objet.events.WorkflowStatusChange.returnValues.newStatus;
     alert("The new status is : " + valueEventNewStatus)
+
+
+    let valueEventNewStatusReset = objet.events.WorkflowStatusChange.returnValues.newStatus;
+    alert("The new status is : " + valueEventNewStatusReset)
 }
 
   handleSubmitGetWinningId = async () => {
@@ -293,7 +294,7 @@ class App extends Component {
 
     else{
 
-      if(this.state.showProposals){ // is this.state.show
+      if(this.state.showProposals){ 
         return (
           <div className="App">
     

@@ -49,7 +49,7 @@ contract Voting is Ownable {
         return workflowStatus;
     }
 
-    // Proposal[] proposalsArray; 
+
     Proposal[5] proposalsArray;
     uint public numberOfProposals;
     mapping (address => Voter) voters;
@@ -191,5 +191,11 @@ contract Voting is Ownable {
        
        workflowStatus = WorkflowStatus.VotesTallied;
        emit WorkflowStatusChange(WorkflowStatus.VotingSessionEnded, WorkflowStatus.VotesTallied);
+
+       /// @dev reset workflow
+       /// @notice reset workflow
+       workflowStatus = WorkflowStatus.RegisteringVoters;
+       emit WorkflowStatusChange(WorkflowStatus.VotesTallied,WorkflowStatus.RegisteringVoters);
+
     }
 }
