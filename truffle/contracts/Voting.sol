@@ -192,10 +192,14 @@ contract Voting is Ownable {
        workflowStatus = WorkflowStatus.VotesTallied;
        emit WorkflowStatusChange(WorkflowStatus.VotingSessionEnded, WorkflowStatus.VotesTallied);
 
-       /// @dev reset workflow
-       /// @notice reset workflow
-       workflowStatus = WorkflowStatus.RegisteringVoters;
-       emit WorkflowStatusChange(WorkflowStatus.VotesTallied,WorkflowStatus.RegisteringVoters);
+    }
 
+    /// @dev reset workflow
+    /// @notice reset workflow
+    function resetWorkflow() external onlyOwner {
+        require(numberOfProposals == 0,' they already an proposal');
+        require(workflowStatus == WorkflowStatus.VotesTallied, "Vote is actice ");
+        workflowStatus = WorkflowStatus.RegisteringVoters;
+        emit WorkflowStatusChange(WorkflowStatus.VotesTallied,WorkflowStatus.RegisteringVoters);
     }
 }

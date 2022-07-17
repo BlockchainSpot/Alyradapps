@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import VotingContract from "./contracts/Voting.json";
 import getWeb3 from "./getWeb3";
 import "./App.css";
+import { Button } from 'react-bootstrap';
 
 
 class App extends Component {
@@ -136,10 +137,6 @@ class App extends Component {
 
     let valueEventNewStatus = objet.events.WorkflowStatusChange.returnValues.newStatus;
     alert("The new status is : " + valueEventNewStatus)
-
-
-    let valueEventNewStatusReset = objet.events.WorkflowStatusChange.returnValues.newStatus;
-    alert("The new status is : " + valueEventNewStatusReset)
 }
 
   handleSubmitGetWinningId = async () => {
@@ -147,6 +144,12 @@ class App extends Component {
     const response = await contract.methods.getWinningProposalId().call();
     this.setState({ winningProposal: response });
 
+  }
+
+  handleResetWorkflow = async () => {
+    const { accounts, contract} = this.state;
+    const status = (await contract.methods.resetWorkflow().call({ from: accounts[0] }));
+    this.setState({workflowStatus: status});
   }
 
   handleSubmitShowproposals = async () => {
@@ -237,12 +240,14 @@ class App extends Component {
                             <input type="text" id="proposalId" name="proposalId" onChange={this.handleInputChange} required/>
                             <button className="btn blue darken-2" type="submit" name="proposalId">Envoyer</button>
             </form><br></br>
-                        
+
+            
             <button  type="button" onClick={this.handleSubmitEndVotingSession} name="endVotingSession">Cloturer la session de vote</button><br></br><br></br>
             <button  type="button" onClick={this.handleSubmitTallyVotes} name="tallyVotes">Compter les voix</button><br></br><br></br>
             <button  type="button" onClick={this.handleSubmitGetWinningId} name="getWinningId">Afficher l'ID du vainqueur</button><br></br><br></br>
+            <button  type="button" onClick={this.handleResetWorkflow} name="ResetWorkflow">ResetWorkflow</button><br></br><br></br>
             
-    
+
             <div>winningProposalID : {this.state.winningProposal}</div>
           </div>
         );
