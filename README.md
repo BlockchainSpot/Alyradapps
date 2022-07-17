@@ -9,7 +9,7 @@
 
 Compiling your contracts...
 
-   > contract address:    0x259441B66ec28dcdFe0B99B62687bf2B42d19e1b
+   > contract address:    0x19Cb0cd4c891706E6aaA23554A47F4B34Ec4e1d6
 
 
  
