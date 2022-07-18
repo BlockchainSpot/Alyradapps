@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import VotingContract from "./contracts/Voting.json";
 import getWeb3 from "./getWeb3";
 import "./App.css";
-import { Button } from 'react-bootstrap';
+
 
 
 class App extends Component {
@@ -213,9 +213,11 @@ class App extends Component {
             </header> 
 
             <div>Etat du vote (workflowStatus) : {this.state.workflowStatus}</div>
-              <p>Owner, inscrivez les voters ici : </p>
+              
 
             <form onSubmit={this.handleSubmit}>
+              
+                            <p>Ajouter Adresse des voters : </p>
                             <input type="text" id="username" name="username" onChange={this.handleInputChange} required/>             
                             <button className="btn blue darken-2" type="submit" name="action">Enregister
                             </button><br></br>
@@ -224,7 +226,7 @@ class App extends Component {
             <button  type="button" onClick={this.handleSubmitStartProposalsRegistering} name="startProposalsRegistering">Commencer l'enregistrement des propositions</button><br></br><br></br>
                             
             <form onSubmit={this.handleSubmitProposal}>
-                            <label htmlFor="proposal">Quelle est votre proposition ?</label><br></br>
+                            <label htmlFor="proposal">Quelle est votre proposition ?</label>
                             <input type="text" id="proposal" name="proposal" onChange={this.handleInputChange} required/>
                             <button className="btn blue darken-2" type="submit" name="proposal">Envoyer</button>
             </form><br></br>
@@ -271,9 +273,10 @@ class App extends Component {
             </header> 
 
             <div>Etat du vote (workflowStatus) : {this.state.workflowStatus}</div>
-              <p>Owner, inscrivez les voters ici : </p>
+              
                 
             <form onSubmit={this.handleSubmit}>
+            <p>Ajouter Adresse des voters : </p>
                             <input type="text" id="username" name="username" onChange={this.handleInputChange} required/>             
                             <button className="btn blue darken-2" type="submit" name="action">Enregister
                             </button><br></br>
@@ -282,7 +285,7 @@ class App extends Component {
             <button  type="button" onClick={this.handleSubmitStartProposalsRegistering} name="startProposalsRegistering">Commencer l'enregistrement des propositions</button><br></br><br></br>
                             
             <form onSubmit={this.handleSubmitProposal}>
-                            <label htmlFor="proposal">Quelle est votre proposition ?</label><br></br>
+                            <label htmlFor="proposal">Entrer votre proposition : </label>
                             <input type="text" id="proposal" name="proposal" onChange={this.handleInputChange} required/>
                             <button className="btn blue darken-2" type="submit" name="proposal">Envoyer</button>
             </form><br></br>
@@ -326,7 +329,7 @@ class App extends Component {
             <div>Etat du vote (workflowStatus) : {this.state.workflowStatus}</div>
               <p>Owner, inscrivez les voters ici : </p>
             <form onSubmit={this.handleSubmitProposal}>
-                            <label htmlFor="proposal">Quelle est votre proposition ?</label><br></br><br></br>
+                            <label htmlFor="proposal">Quelle est votre proposition ?</label>
                             <input type="text" id="proposal" name="proposal" onChange={this.handleInputChange} required/>
                             <button className="btn blue darken-2" type="submit" name="proposal">Envoyer</button>
             </form>
@@ -368,7 +371,7 @@ class App extends Component {
             <div>Etat du vote (workflowStatus) : {this.state.workflowStatus}</div>
               <p>Owner, inscrivez les voters ici : </p>
             <form onSubmit={this.handleSubmitProposal}>
-                            <label htmlFor="proposal">Quelle est votre proposition ?</label><br></br>
+                            <label htmlFor="proposal">Quelle est votre proposition ?</label>
                             <input type="text" id="proposal" name="proposal" onChange={this.handleInputChange} required/>
                             <button className="btn blue darken-2" type="submit" name="proposal">Envoyer</button>
             </form><br></br>
