@@ -149,7 +149,6 @@ class App extends Component {
   handleResetWorkflow = async () => {
     const { accounts, contract} = this.state;
     const status = (await contract.methods.resetWorkflow().call({ from: accounts[0] }));
-    this.setState({workflowStatus: status});
   }
 
   handleSubmitShowproposals = async () => {
@@ -197,17 +196,24 @@ class App extends Component {
   render() {
     if (!this.state.web3) {
       return <div>Loading Web3, accounts, and contract...</div>;
+      
     }
     if (this.state.owned){
       if(this.state.showProposals){
         return (
+
+          
           <div className="App">
-    
-            <h1> Section de Vote</h1>
-            <div>Adresse connectée : {this.state.accounts}</div><br></br>
+
+            <header className="App-header">
+              <h1> Section de Vote</h1>
+              <div>Adresse connectée : {this.state.accounts}</div><br></br>
+
+            </header> 
+
             <div>Etat du vote (workflowStatus) : {this.state.workflowStatus}</div>
-            <p>Owner, inscrivez les voters ici : </p>
-                
+              <p>Owner, inscrivez les voters ici : </p>
+
             <form onSubmit={this.handleSubmit}>
                             <input type="text" id="username" name="username" onChange={this.handleInputChange} required/>             
                             <button className="btn blue darken-2" type="submit" name="action">Enregister
@@ -255,11 +261,15 @@ class App extends Component {
       else{
         return (
           <div className="App">
-    
-            <h1> Section de vote </h1>
-            <div>Adresse connectée : {this.state.accounts}</div><br></br>
+
+            <header className="App-header">
+              <h1> Section de Vote</h1>
+              <div>Adresse connectée : {this.state.accounts}</div><br></br>
+
+            </header> 
+
             <div>Etat du vote (workflowStatus) : {this.state.workflowStatus}</div>
-            <p>Owner, inscrivez les voters ici : </p>
+              <p>Owner, inscrivez les voters ici : </p>
                 
             <form onSubmit={this.handleSubmit}>
                             <input type="text" id="username" name="username" onChange={this.handleInputChange} required/>             
@@ -303,11 +313,14 @@ class App extends Component {
         return (
           <div className="App">
     
-            <h1> Section de vote</h1>
-            <h2>Attendre votre</h2>
-            <div>Adresse connectée : {this.state.accounts}</div><br></br>
-            <div>Etat du vote (workflowStatus) : {this.state.workflowStatus}</div><br></br>
+             <header className="App-header">
+              <h1> Section de Vote</h1>
+              <div>Adresse connectée : {this.state.accounts}</div><br></br>
+
+            </header> 
             
+            <div>Etat du vote (workflowStatus) : {this.state.workflowStatus}</div>
+              <p>Owner, inscrivez les voters ici : </p>
             <form onSubmit={this.handleSubmitProposal}>
                             <label htmlFor="proposal">Quelle est votre proposition ?</label><br></br><br></br>
                             <input type="text" id="proposal" name="proposal" onChange={this.handleInputChange} required/>
@@ -340,10 +353,13 @@ class App extends Component {
         return (
           <div className="App">
     
-            <h1>Application de vote</h1>
-            <div>Adresse connectée : {this.state.accounts}</div><br></br>
-            <div>Etat du vote (workflowStatus) : {this.state.workflowStatus}</div><br></br>
-            
+           <header className="App-header">
+              <h1> Section de Vote</h1>
+              <div>Adresse connectée : {this.state.accounts}</div><br></br>
+
+            </header> 
+            <div>Etat du vote (workflowStatus) : {this.state.workflowStatus}</div>
+              <p>Owner, inscrivez les voters ici : </p>
             <form onSubmit={this.handleSubmitProposal}>
                             <label htmlFor="proposal">Quelle est votre proposition ?</label><br></br>
                             <input type="text" id="proposal" name="proposal" onChange={this.handleInputChange} required/>

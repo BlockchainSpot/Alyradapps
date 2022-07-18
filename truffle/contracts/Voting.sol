@@ -5,8 +5,9 @@ pragma solidity 0.8.15;
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 /// @title A voting contract
-/// @author Cyril C
+/// @author Karl from alyra correction
 /// @notice You can use this contract for basic voting 
+
 contract Voting is Ownable {
 
 
@@ -199,6 +200,5 @@ contract Voting is Ownable {
     function resetWorkflow() external onlyOwner {
         require(numberOfProposals == 0,' they are already an proposal');
         workflowStatus = WorkflowStatus.RegisteringVoters;
-        emit WorkflowStatusChange(WorkflowStatus.VotesTallied,WorkflowStatus.RegisteringVoters);
     }
 }
