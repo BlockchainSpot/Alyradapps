@@ -356,7 +356,7 @@ class App extends Component {
             </form><br></br>
                         
             <button  type="button" onClick={this.handleSubmitGetWinningId} name="getWinningId">Afficher l'ID du vainqueur</button><br></br><br></br>
-            <button  type="button" onClick={this.handleSubmitShowproposals} name="showproposals">Afficher les propositions</button><br></br><br></br>
+            <button  type="button"className="proposition" onClick={this.handleSubmitShowproposals} name="showproposals">Afficher les propositions</button><br></br><br></br>
     
             <footer className="App-footer">
             <button  type="button" onClick={this.handleSubmitGetWinningId} name="getWinningId">Afficher l'ID du vainqueur</button>
@@ -381,7 +381,7 @@ class App extends Component {
                             <button className="btn blue darken-2" type="submit" name="proposal">Envoyer</button>
             </form><br></br>
      
-            <button  type="button" onClick={this.handleSubmitShowproposals} name="showproposals">Afficher les propositions</button><br></br><br></br>
+            <button  type="button"className="proposition" onClick={this.handleSubmitShowproposals} name="showproposals">Afficher les propositions</button><br></br><br></br>
 
             <form onSubmit={this.handleSubmitProposalId}>
                             <label htmlFor="proposalId">Votez pour l'ID de la proposition :   </label> 
