@@ -1,6 +1,7 @@
 .App {
     text-align: center;
-    background-color: #09d3ac;
+    background-color: #118ead;
+    
   }
   
   .App-logo {
@@ -11,16 +12,64 @@
     background-color: #282c34;
     min-height: 10vh;
     display: flex;
+    align-items: right;
+    justify-content: right;
+    font-size: calc(10px + 1vmin);
+    color: white;
+  }
+
+  .App-header button {
+    max-width: 20vh;
+    min-height: 5vh;
+    font-size: calc(5px + 1vmin);
+    color: white;
+    background-color: #04AA6D;
+    border: none;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .App-footer {
+    background-color: #282c34;
+    min-height:max-content;
+    display: flex;
     flex-direction: column;
     align-items: right;
     justify-content: right;
     font-size: calc(10px + 1vmin);
     color: white;
   }
+
+   .App-footer button {
+      background-color: #04AA6D;
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-decoration: none;
+      margin: 4px 2px;
+      cursor: pointer;
+  }
   
   .App-link {
     color: #09d3ac;
   }
 
-  
+  input[type=text] {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+  }
+
+  button  {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
 

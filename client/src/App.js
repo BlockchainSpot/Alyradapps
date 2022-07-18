@@ -208,6 +208,7 @@ class App extends Component {
             <header className="App-header">
               <h1> Section de Vote</h1>
               <div>Adresse connectée : {this.state.accounts}</div><br></br>
+              <button  type="button" onClick={this.handleResetWorkflow} name="ResetWorkflow">ResetWorkflow</button><br></br><br></br>
 
             </header> 
 
@@ -250,11 +251,11 @@ class App extends Component {
             
             <button  type="button" onClick={this.handleSubmitEndVotingSession} name="endVotingSession">Cloturer la session de vote</button><br></br><br></br>
             <button  type="button" onClick={this.handleSubmitTallyVotes} name="tallyVotes">Compter les voix</button><br></br><br></br>
-            <button  type="button" onClick={this.handleSubmitGetWinningId} name="getWinningId">Afficher l'ID du vainqueur</button><br></br><br></br>
-            <button  type="button" onClick={this.handleResetWorkflow} name="ResetWorkflow">ResetWorkflow</button><br></br><br></br>
             
-
+            <footer className="App-footer">
+            <button  type="button" onClick={this.handleSubmitGetWinningId} name="getWinningId">Afficher l'ID du vainqueur</button>
             <div>winningProposalID : {this.state.winningProposal}</div>
+            </footer>
           </div>
         );
       }
@@ -265,6 +266,7 @@ class App extends Component {
             <header className="App-header">
               <h1> Section de Vote</h1>
               <div>Adresse connectée : {this.state.accounts}</div><br></br>
+              <button  type="button" onClick={this.handleResetWorkflow} name="ResetWorkflow">ResetWorkflow</button><br></br><br></br>
 
             </header> 
 
@@ -298,10 +300,12 @@ class App extends Component {
                         
             <button  type="button" onClick={this.handleSubmitEndVotingSession} name="endVotingSession">Cloturer la session de vote</button><br></br><br></br>
             <button  type="button" onClick={this.handleSubmitTallyVotes} name="tallyVotes">Compter les voix</button><br></br><br></br>
-            <button  type="button" onClick={this.handleSubmitGetWinningId} name="getWinningId">Afficher l'ID du vainqueur</button><br></br><br></br>
-            <button  type="button" onClick={this.handleResetWorkflow} name="ResetWorkflow">ResetWorkflow</button><br></br><br></br>
+            
     
+            <footer className="App-footer">
+            <button  type="button" onClick={this.handleSubmitGetWinningId} name="getWinningId">Afficher l'ID du vainqueur</button>
             <div>winningProposalID : {this.state.winningProposal}</div>
+            </footer>
           </div>
         );
       }
@@ -345,7 +349,10 @@ class App extends Component {
             <button  type="button" onClick={this.handleSubmitGetWinningId} name="getWinningId">Afficher l'ID du vainqueur</button><br></br><br></br>
             <button  type="button" onClick={this.handleSubmitShowproposals} name="showproposals">Afficher les propositions</button><br></br><br></br>
     
+            <footer className="App-footer">
+            <button  type="button" onClick={this.handleSubmitGetWinningId} name="getWinningId">Afficher l'ID du vainqueur</button>
             <div>winningProposalID : {this.state.winningProposal}</div>
+            </footer>
           </div>
         );
       }
@@ -374,9 +381,12 @@ class App extends Component {
                             <button className="btn blue darken-2" type="submit" name="proposalId">Envoyer</button>
             </form><br></br>
                         
-            <button  type="button" onClick={this.handleSubmitGetWinningId} name="getWinningId">Afficher l'ID du vainqueur</button><br></br><br></br>
             
+            
+            <footer className="App-footer">
+            <button  type="button" onClick={this.handleSubmitGetWinningId} name="getWinningId">Afficher l'ID du vainqueur</button>
             <div>winningProposalID : {this.state.winningProposal}</div>
+            </footer>
           </div>
         );
       }
