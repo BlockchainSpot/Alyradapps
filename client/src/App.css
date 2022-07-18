@@ -1,7 +1,7 @@
 .App {
     text-align: center;
     background-color: #118ead;
-    
+    height: 100%;
   }
   
   .App-logo {
@@ -33,7 +33,6 @@
 
   .App-footer {
     background-color: #282c34;
-    min-height:max-content;
     display: flex;
     flex-direction: column;
     align-items: right;
@@ -52,7 +51,7 @@
       margin: 4px 2px;
       cursor: pointer;
   }
-  
+
   .App-link {
     color: #09d3ac;
   }
@@ -74,3 +73,13 @@
     cursor: pointer;
   }
 
+  button.proposition  {
+    background-color: blueviolet;
+    max-width: 20vh;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}

@@ -203,14 +203,12 @@ class App extends Component {
     if (this.state.owned){
       if(this.state.showProposals){
         return (
-
-          
           <div className="App">
 
             <header className="App-header">
               <h1> Section de Vote</h1>
               <div>Adresse connectée : {this.state.accounts}</div><br></br>
-              <button  type="button" onClick={this.handleResetWorkflow} name="ResetWorkflow">ResetWorkflow</button><br></br><br></br>
+              <button  type="button" onClick={this.handleResetWorkflow} name="ResetWorkflow">ResetWorkflow</button>
 
             </header>
 
@@ -235,7 +233,7 @@ class App extends Component {
                               <button className="btn blue darken-2" type="submit" name="proposal">Envoyer</button>
               </form><br></br>
       
-              <button  type="button" onClick={this.handleSubmitShowproposals} name="showproposals">Afficher les propositions</button>
+              <button  type="button" className="proposition" onClick={this.handleSubmitShowproposals} name="showproposals">Afficher les propositions</button>
               <center><table>
                 <tr><th>ID de la proposition</th><th>Description de la proposition</th></tr>
                 <tr><td>0</td><td>{this.state.proposal0}</td></tr>
@@ -298,7 +296,7 @@ class App extends Component {
                             <button className="btn blue darken-2" type="submit" name="proposal">Envoyer</button>
             </form><br></br>
     
-            <button  type="button" onClick={this.handleSubmitShowproposals} name="showproposals">Afficher les propositions</button><br></br><br></br>
+            <button  type="button" className="proposition" onClick={this.handleSubmitShowproposals} name="showproposals">Afficher les propositions</button><br></br><br></br>
 
             <button  type="button" onClick={this.handleSubmitEndProposalsRegistering} name="endProposalsRegistering">Etape 2 : Fin proposition </button><br></br><br></br>
             <button  type="button" onClick={this.handleSubmitStartVotingSession} name="startVotingSession">Etape 3 : Start session de vote</button><br></br><br></br>
