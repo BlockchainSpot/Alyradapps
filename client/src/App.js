@@ -29,7 +29,7 @@ class App extends Component {
       // example of interacting with the contract's methods.
       
       const owner = await instance.methods.owner().call();
-      let owned = accounts[0]==owner;
+      let owned = accounts[0]===owner;
 
 
       this.setState({ web3, accounts, contract: instance, owned }, this.runExample);
@@ -148,7 +148,8 @@ class App extends Component {
 
   handleResetWorkflow = async () => {
     const { accounts, contract} = this.state;
-    const status = (await contract.methods.resetWorkflow().call({ from: accounts[0] }));
+    await contract.methods.resetWorkflow().call({ from: accounts[0] });
+
   }
 
   handleSubmitShowproposals = async () => {
@@ -335,7 +336,7 @@ class App extends Component {
             <div>Etat du vote (workflowStatus) : {this.state.workflowStatus}</div>
               <p>Owner, inscrivez les voters ici : </p>
             <form onSubmit={this.handleSubmitProposal}>
-                            <label htmlFor="proposal">Quelle est votre proposition ?</label>
+                            <label htmlFor="proposal">Quelle est votre proposition ? </label>
                             <input type="text" id="proposal" name="proposal" onChange={this.handleInputChange} required/>
                             <button className="btn blue darken-2" type="submit" name="proposal">Envoyer</button>
             </form>
@@ -350,7 +351,7 @@ class App extends Component {
             </table></center><br></br>
 
             <form onSubmit={this.handleSubmitProposalId}>
-                            <label htmlFor="proposalId">Votez pour l'ID de la proposition de votre choix</label><br></br>
+                            <label htmlFor="proposalId">Votez pour l'ID de la proposition : </label><br></br>
                             <input type="text" id="proposalId" name="proposalId" onChange={this.handleInputChange} required/>
                             <button className="btn blue darken-2" type="submit" name="proposalId">Envoyer</button>
             </form><br></br>
