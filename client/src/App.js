@@ -210,50 +210,55 @@ class App extends Component {
               <div>Adresse connectée : {this.state.accounts}</div><br></br>
               <button  type="button" onClick={this.handleResetWorkflow} name="ResetWorkflow">ResetWorkflow</button><br></br><br></br>
 
-            </header> 
+            </header>
 
-            <div>Etat du vote (workflowStatus) : {this.state.workflowStatus}</div><br></br>
+            <div className="colom-left">
+
+              <div>Etat du vote (workflowStatus) : {this.state.workflowStatus}</div><br></br>
+                
+
+              <form onSubmit={this.handleSubmit}>
+
+                              <label htmlFor="voters">Ajouter Adresse des voters : </label>
+                              <input type="text" id="username" name="username" placeholder="0x..." onChange={this.handleInputChange} required/>             
+                              <button className="btn blue darken-2" type="submit" name="action">Enregister
+                              </button><br></br>
+              </form><br></br>
+                          
+              <button  type="button" onClick={this.handleSubmitStartProposalsRegistering} name="startProposalsRegistering">Commencer l'enregistrement des propositions</button><br></br><br></br>
+                              
+              <form onSubmit={this.handleSubmitProposal}>
+                              <label htmlFor="proposal">Quelle est votre proposition ?</label>
+                              <input type="text" id="proposal" name="proposal" onChange={this.handleInputChange} required/>
+                              <button className="btn blue darken-2" type="submit" name="proposal">Envoyer</button>
+              </form><br></br>
+      
+              <button  type="button" onClick={this.handleSubmitShowproposals} name="showproposals">Afficher les propositions</button>
+              <center><table>
+                <tr><th>ID de la proposition</th><th>Description de la proposition</th></tr>
+                <tr><td>0</td><td>{this.state.proposal0}</td></tr>
+                <tr><td>1</td><td>{this.state.proposal1}</td></tr>
+                <tr><td>2</td><td>{this.state.proposal2}</td></tr>
+                <tr><td>3</td><td>{this.state.proposal3}</td></tr>
+                <tr><td>4</td><td>{this.state.proposal4}</td></tr>
+              </table></center><br></br>
+
+              <button  type="button" onClick={this.handleSubmitEndProposalsRegistering} name="endProposalsRegistering">Cloturer l'enregistrement des propositions</button><br></br><br></br>
+              <button  type="button" onClick={this.handleSubmitStartVotingSession} name="startVotingSession">Commencer la session de vote</button><br></br><br></br>
               
+              <form onSubmit={this.handleSubmitProposalId}>
+                              <label htmlFor="proposalId">Votez pour la proposition : </label>
+                              <input type="text" id="proposalId" name="proposalId" onChange={this.handleInputChange} required/>
+                              <button className="btn blue darken-2" type="submit" name="proposalId">Envoyer</button>
+              </form><br></br>
 
-            <form onSubmit={this.handleSubmit}>
+            </div>
+            <div className="colom-rigt">
+              
+              <button  type="button" onClick={this.handleSubmitEndVotingSession} name="endVotingSession">Cloturer la session de vote</button><br></br><br></br>
+              <button  type="button" onClick={this.handleSubmitTallyVotes} name="tallyVotes">Compter les voix</button><br></br><br></br>
+            </div>
 
-                            <label htmlFor="voters">Ajouter Adresse des voters : </label>
-                            <input type="text" id="username" name="username" placeholder="0x..." onChange={this.handleInputChange} required/>             
-                            <button className="btn blue darken-2" type="submit" name="action">Enregister
-                            </button><br></br>
-            </form><br></br>
-                        
-            <button  type="button" onClick={this.handleSubmitStartProposalsRegistering} name="startProposalsRegistering">Commencer l'enregistrement des propositions</button><br></br><br></br>
-                            
-            <form onSubmit={this.handleSubmitProposal}>
-                            <label htmlFor="proposal">Quelle est votre proposition ?</label>
-                            <input type="text" id="proposal" name="proposal" onChange={this.handleInputChange} required/>
-                            <button className="btn blue darken-2" type="submit" name="proposal">Envoyer</button>
-            </form><br></br>
-    
-            <button  type="button" onClick={this.handleSubmitShowproposals} name="showproposals">Afficher les propositions</button>
-            <center><table>
-              <tr><th>ID de la proposition</th><th>Description de la proposition</th></tr>
-              <tr><td>0</td><td>{this.state.proposal0}</td></tr>
-              <tr><td>1</td><td>{this.state.proposal1}</td></tr>
-              <tr><td>2</td><td>{this.state.proposal2}</td></tr>
-              <tr><td>3</td><td>{this.state.proposal3}</td></tr>
-              <tr><td>4</td><td>{this.state.proposal4}</td></tr>
-            </table></center><br></br>
-
-            <button  type="button" onClick={this.handleSubmitEndProposalsRegistering} name="endProposalsRegistering">Cloturer l'enregistrement des propositions</button><br></br><br></br>
-            <button  type="button" onClick={this.handleSubmitStartVotingSession} name="startVotingSession">Commencer la session de vote</button><br></br><br></br>
-            
-            <form onSubmit={this.handleSubmitProposalId}>
-                            <label htmlFor="proposalId">Votez pour la proposition de votre choix</label><br></br>
-                            <input type="text" id="proposalId" name="proposalId" onChange={this.handleInputChange} required/>
-                            <button className="btn blue darken-2" type="submit" name="proposalId">Envoyer</button>
-            </form><br></br>
-
-            
-            <button  type="button" onClick={this.handleSubmitEndVotingSession} name="endVotingSession">Cloturer la session de vote</button><br></br><br></br>
-            <button  type="button" onClick={this.handleSubmitTallyVotes} name="tallyVotes">Compter les voix</button><br></br><br></br>
-            
             <footer className="App-footer">
             <button  type="button" onClick={this.handleSubmitGetWinningId} name="getWinningId">Afficher l'ID du vainqueur</button>
             <div>winningProposalID : {this.state.winningProposal}</div>
@@ -297,14 +302,14 @@ class App extends Component {
             <button  type="button" onClick={this.handleSubmitStartVotingSession} name="startVotingSession">Commencer la session de vote</button><br></br><br></br>
             
             <form onSubmit={this.handleSubmitProposalId}>
-                            <label htmlFor="proposalId">Votez pour l'ID de la proposition de votre choix</label><br></br>
+                            <label htmlFor="proposalId">Votez pour l'ID de la proposition :  </label>
                             <input type="text" id="proposalId" name="proposalId" onChange={this.handleInputChange} required/>
                             <button className="btn blue darken-2" type="submit" name="proposalId">Envoyer</button>
             </form><br></br>
                         
             <button  type="button" onClick={this.handleSubmitEndVotingSession} name="endVotingSession">Cloturer la session de vote</button><br></br><br></br>
             <button  type="button" onClick={this.handleSubmitTallyVotes} name="tallyVotes">Compter les voix</button><br></br><br></br>
-            
+          
     
             <footer className="App-footer">
             <button  type="button" onClick={this.handleSubmitGetWinningId} name="getWinningId">Afficher l'ID du vainqueur</button>
@@ -370,9 +375,8 @@ class App extends Component {
 
             </header> 
             <div>Etat du vote (workflowStatus) : {this.state.workflowStatus}</div>
-              <p>Owner, inscrivez les voters ici : </p>
             <form onSubmit={this.handleSubmitProposal}>
-                            <label htmlFor="proposal">Quelle est votre proposition ?</label>
+                            <label htmlFor="proposal">Quelle est votre proposition ?  </label>
                             <input type="text" id="proposal" name="proposal" onChange={this.handleInputChange} required/>
                             <button className="btn blue darken-2" type="submit" name="proposal">Envoyer</button>
             </form><br></br>
@@ -380,7 +384,7 @@ class App extends Component {
             <button  type="button" onClick={this.handleSubmitShowproposals} name="showproposals">Afficher les propositions</button><br></br><br></br>
 
             <form onSubmit={this.handleSubmitProposalId}>
-                            <label htmlFor="proposalId">Votez pour l'ID de la proposition de votre choix</label><br></br>
+                            <label htmlFor="proposalId">Votez pour l'ID de la proposition :   </label> 
                             <input type="text" id="proposalId" name="proposalId" onChange={this.handleInputChange} required/>
                             <button className="btn blue darken-2" type="submit" name="proposalId">Envoyer</button>
             </form><br></br>
