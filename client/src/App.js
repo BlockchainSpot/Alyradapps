@@ -227,7 +227,7 @@ class App extends Component {
                               </button><br></br>
               </form><br></br>
                           
-              <button  type="button" onClick={this.handleSubmitStartProposalsRegistering} name="startProposalsRegistering">Commencer l'enregistrement des propositions</button><br></br><br></br>
+              <button  type="button" onClick={this.handleSubmitStartProposalsRegistering} name="startProposalsRegistering">Etape 1 : Start Proposition</button><br></br><br></br>
                               
               <form onSubmit={this.handleSubmitProposal}>
                               <label htmlFor="proposal">Quelle est votre proposition ?</label>
@@ -245,8 +245,8 @@ class App extends Component {
                 <tr><td>4</td><td>{this.state.proposal4}</td></tr>
               </table></center><br></br>
 
-              <button  type="button" onClick={this.handleSubmitEndProposalsRegistering} name="endProposalsRegistering">Cloturer l'enregistrement des propositions</button><br></br><br></br>
-              <button  type="button" onClick={this.handleSubmitStartVotingSession} name="startVotingSession">Commencer la session de vote</button><br></br><br></br>
+              <button  type="button" onClick={this.handleSubmitEndProposalsRegistering} name="endProposalsRegistering">Etape 2 : Fin proposition</button><br></br><br></br>
+              <button  type="button" onClick={this.handleSubmitStartVotingSession} name="startVotingSession">Etape 3 : Start session de vote</button><br></br><br></br>
               
               <form onSubmit={this.handleSubmitProposalId}>
                               <label htmlFor="proposalId">Votez pour la proposition : </label>
@@ -257,12 +257,12 @@ class App extends Component {
             </div>
             <div className="colom-rigt">
               
-              <button  type="button" onClick={this.handleSubmitEndVotingSession} name="endVotingSession">Cloturer la session de vote</button><br></br><br></br>
-              <button  type="button" onClick={this.handleSubmitTallyVotes} name="tallyVotes">Compter les voix</button><br></br><br></br>
+              <button  type="button" onClick={this.handleSubmitEndVotingSession} name="endVotingSession">Etape 4 : Fin vote proposition</button><br></br><br></br>
+              <button  type="button" onClick={this.handleSubmitTallyVotes} name="tallyVotes">Etape 5 : Décompte des votes</button><br></br><br></br>
             </div>
 
             <footer className="App-footer">
-            <button  type="button" onClick={this.handleSubmitGetWinningId} name="getWinningId">Afficher l'ID du vainqueur</button>
+            <button  type="button" onClick={this.handleSubmitGetWinningId} name="getWinningId">Afficher l'ID gagant</button>
             <div>winningProposalID : {this.state.winningProposal}</div>
             </footer>
           </div>
@@ -290,7 +290,7 @@ class App extends Component {
                             </button><br></br>
             </form><br></br>
                         
-            <button  type="button" onClick={this.handleSubmitStartProposalsRegistering} name="startProposalsRegistering">Commencer l'enregistrement des propositions</button><br></br><br></br>
+            <button  type="button" onClick={this.handleSubmitStartProposalsRegistering} name="startProposalsRegistering">Etape 1 : Start Proposition </button><br></br><br></br>
                             
             <form onSubmit={this.handleSubmitProposal}>
                             <label htmlFor="proposal">Entrer votre proposition : </label>
@@ -300,8 +300,8 @@ class App extends Component {
     
             <button  type="button" onClick={this.handleSubmitShowproposals} name="showproposals">Afficher les propositions</button><br></br><br></br>
 
-            <button  type="button" onClick={this.handleSubmitEndProposalsRegistering} name="endProposalsRegistering">Cloturer l'enregistrement des propositions</button><br></br><br></br>
-            <button  type="button" onClick={this.handleSubmitStartVotingSession} name="startVotingSession">Commencer la session de vote</button><br></br><br></br>
+            <button  type="button" onClick={this.handleSubmitEndProposalsRegistering} name="endProposalsRegistering">Etape 2 : Fin proposition </button><br></br><br></br>
+            <button  type="button" onClick={this.handleSubmitStartVotingSession} name="startVotingSession">Etape 3 : Start session de vote</button><br></br><br></br>
             
             <form onSubmit={this.handleSubmitProposalId}>
                             <label htmlFor="proposalId">Votez pour l'ID de la proposition :  </label>
@@ -309,12 +309,12 @@ class App extends Component {
                             <button className="btn blue darken-2" type="submit" name="proposalId">Envoyer</button>
             </form><br></br>
                         
-            <button  type="button" onClick={this.handleSubmitEndVotingSession} name="endVotingSession">Cloturer la session de vote</button><br></br><br></br>
-            <button  type="button" onClick={this.handleSubmitTallyVotes} name="tallyVotes">Compter les voix</button><br></br><br></br>
+            <button  type="button" onClick={this.handleSubmitEndVotingSession} name="endVotingSession">Etape 4 : Fin vote proposition</button><br></br><br></br>
+            <button  type="button" onClick={this.handleSubmitTallyVotes} name="tallyVotes">Etape 5 : Décompte des votes </button><br></br><br></br>
           
     
             <footer className="App-footer">
-            <button  type="button" onClick={this.handleSubmitGetWinningId} name="getWinningId">Afficher l'ID du vainqueur</button>
+            <button  type="button" onClick={this.handleSubmitGetWinningId} name="getWinningId">Afficher l'ID gagant </button>
             <div>winningProposalID : {this.state.winningProposal}</div>
             </footer>
           </div>
