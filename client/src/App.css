@@ -44,6 +44,7 @@
 
    .App-footer button {
       background-color: #04AA6D;
+      max-width: 20vh;
       border: none;
       color: white;
       padding: 16px 32px;

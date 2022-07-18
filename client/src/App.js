@@ -212,13 +212,13 @@ class App extends Component {
 
             </header> 
 
-            <div>Etat du vote (workflowStatus) : {this.state.workflowStatus}</div>
+            <div>Etat du vote (workflowStatus) : {this.state.workflowStatus}</div><br></br>
               
 
             <form onSubmit={this.handleSubmit}>
-              
-                            <p>Ajouter Adresse des voters : </p>
-                            <input type="text" id="username" name="username" onChange={this.handleInputChange} required/>             
+
+                            <label htmlFor="voters">Ajouter Adresse des voters : </label>
+                            <input type="text" id="username" name="username" placeholder="0x..." onChange={this.handleInputChange} required/>             
                             <button className="btn blue darken-2" type="submit" name="action">Enregister
                             </button><br></br>
             </form><br></br>
@@ -272,12 +272,13 @@ class App extends Component {
 
             </header> 
 
-            <div>Etat du vote (workflowStatus) : {this.state.workflowStatus}</div>
+            <div>Etat du vote (workflowStatus) : {this.state.workflowStatus}</div><br></br>
               
                 
             <form onSubmit={this.handleSubmit}>
-            <p>Ajouter Adresse des voters : </p>
-                            <input type="text" id="username" name="username" onChange={this.handleInputChange} required/>             
+                        
+                        <label htmlFor="voters">Ajouter Adresse des voters : </label>
+                            <input type="text" id="username" name="username" placeholder="0x..." onChange={this.handleInputChange} required/>             
                             <button className="btn blue darken-2" type="submit" name="action">Enregister
                             </button><br></br>
             </form><br></br>
