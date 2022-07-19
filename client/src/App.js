@@ -57,8 +57,9 @@ class App extends Component {
   };
 
   handleSubmit = async (e) => {
-    const { accounts, contract, username } = this.state;
-    await contract.methods.addVoter(username).send({ from: accounts[0] });
+    const { accounts, contract, _addr } = this.state;
+    await contract.methods.addVoter(_addr).send({ from: accounts[0] });
+ 
   }
 
   handleSubmitStartProposalsRegistering = async () => {
@@ -150,7 +151,6 @@ class App extends Component {
   handleResetWorkflow = async () => {
     const { accounts, contract} = this.state;
     await contract.methods.resetWorkflow().call({ from: accounts[0] });
-
   }
 
   handleSubmitShowproposals = async () => {
